@@ -7,7 +7,10 @@ def test_1(test_client):
     assert response.text == 'Hello Dima, Hello Denis'
 
 
-# this is new style of test with using "request" method with test client, as you recommended
+"""this is new style of test with using "request" method with test client, 
+   as you recommended after switching from requests to httpx"""
+
+
 def test_2(test_client):
     response = test_client.request('GET', '/app/hello_people')
     assert response.status_code == status.HTTP_200_OK
